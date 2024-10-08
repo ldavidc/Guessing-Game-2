@@ -29,7 +29,16 @@ public class GameLogic {
      */
     public int binarySearch(String predictedClass) {
         
-        return 0;
+        if predictedClass.equals("red") {
+            guessLower();
+        } else if (predictedClass.equals("blue")) {
+            guessHigher();
+        } else if (predictedClass.equals("green")) {
+            guessCorrect();
+        } else {
+            // Invalid case
+            return -1;
+        }
     }
 
     /**
@@ -40,6 +49,9 @@ public class GameLogic {
      */
     public boolean isGuessCorrect(String predictedClass) {
         
+        if (predictedClass.equals("green")) {
+            return true;
+        }
         return false;
     }
 
@@ -51,8 +63,10 @@ public class GameLogic {
      * @return the next guess
      */
     public int guessHigher() {
-        
-        return 0;
+        left = guess;
+        guess = (left + right) / 2;
+
+        return guess;
     }
 
     /**
@@ -62,8 +76,9 @@ public class GameLogic {
      * @return the new guess
      */
     public int guessLower() {
-        
-        return 0;
+        right = guess;
+        guess = (left + right) / 2;
+        return guess;
     }
 
     /**
@@ -73,7 +88,7 @@ public class GameLogic {
      */
     public int guessCorrect() {
 
-        return 0;
+        return guess;
     }
 
     /**
