@@ -29,7 +29,7 @@ public class GameLogic {
      */
     public int binarySearch(String predictedClass) {
         
-        if predictedClass.equals("red") {
+        if (predictedClass.equals("red")) {
             guessLower();
         } else if (predictedClass.equals("blue")) {
             guessHigher();
