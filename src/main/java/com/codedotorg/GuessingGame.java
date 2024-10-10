@@ -114,9 +114,11 @@ public class GuessingGame {
      */
     private void updateGame() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+            System.out.println("Updating game");
             // Get the predicted class and score from the CameraController
             String predictedClass = cameraController.getPredictedClass();
             double predictedScore = cameraController.getPredictedScore();
+
 
             if (predictedClass != null) {
                 // Show the user's response and confidence score in the app
